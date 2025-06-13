@@ -1,0 +1,71 @@
+@Metadata.layer: #CORE
+//@Search.searchable: true
+@UI:{headerInfo: { typeName: 'Item',
+                  typeNamePlural: 'Items',
+                  title: {type: #STANDARD,
+                          label: 'Item',
+                          value: 'IdItems'
+                         }
+    } }
+annotate entity Z_C_ITEMS_4737 with
+{
+  @UI.facet: [{ id: 'Items',
+       purpose: #STANDARD,
+          type: #IDENTIFICATION_REFERENCE,
+         label: 'Item'}]
+
+  @UI:{lineItem: [{ position: 10, label: 'Item Id',importance: #HIGH }],
+  identification: [{position: 10, label: 'Item Id'  }]}
+  IdItems;
+
+  @UI.hidden: true
+  IdHeader;
+
+  @UI:{lineItem: [{ position: 20, label: 'Name',importance: #HIGH }],
+  identification: [{position: 20, label: 'Name'  }]}
+  Name;
+
+  @UI:{lineItem: [{ position: 30, label: 'Description',importance: #HIGH }],
+  identification: [{position: 30, label: 'Description'  }]}
+  Description;
+
+  @UI:{lineItem: [{ position: 40, label: 'Releasedate',importance: #HIGH }],
+  identification: [{position: 40, label: 'Releasedate'  }]}
+  ReleaseDate;
+
+  @UI:{lineItem: [{ position: 50, label: 'Discontinuedate',importance: #HIGH }],
+  identification: [{position: 50, label: 'Discontinuedate'  }]}
+  DiscontinuedDate;
+
+  @UI:{lineItem: [{ position: 60, label: 'Price',importance: #HIGH }],
+  identification: [{position: 60, label: 'Price'  }]}
+  Price;
+
+  @UI.hidden: true
+  CurrencyCode;
+
+  @UI:{lineItem: [{ position: 70, label: 'Height',importance: #HIGH }],
+  identification: [{position: 70, label: 'Height'  }]}
+  Height;
+
+  @UI:{lineItem: [{ position: 80, label: 'Width',importance: #HIGH }],
+  identification: [{position: 80, label: 'Width'  }]}
+  Width;
+
+  @UI:{lineItem: [{ position: 90, label: 'Depth',importance: #HIGH }],
+  identification: [{position: 90, label: 'Depth'  }]}
+  Depth;
+
+  @UI:{lineItem: [{ position: 100, label: 'Quantity',importance: #HIGH }],
+  identification: [{position: 100, label: 'Quantity'  }]}
+  Quantity;
+
+  @UI:{lineItem: [{ position: 110, label: 'Unitofmeasure',importance: #HIGH }],
+  identification: [{position: 110, label: 'Unitofmeasure'  }]}
+  UnitOfMeasure;
+
+  //Associations
+  @UI.hidden: true
+  _Header;
+
+}

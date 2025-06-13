@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI:{
+    headerInfo: {
+    typeName: 'Header',
+    typeNamePlural: 'Headers',
+    imageUrl: 'Imageurl',
+    title: {
+        type: #STANDARD,
+        label: 'Header',
+        value: 'IdHeader'
+    }
+
+    } }
+annotate entity z_c_header_4737 with
+{
+  @UI.facet: [{ id: 'Header',
+         purpose: #STANDARD,
+            type: #IDENTIFICATION_REFERENCE,
+           label: 'Header',
+           position: 10}]
+
+  @UI:{lineItem: [{
+         position: 10,
+            label: 'Order Id',importance: #HIGH }],
+   identification: [{position: 10, label: 'Order Id'  }],
+   selectionField: [{ position: 10 }] }
+  IdHeader;
+
+  @UI:{lineItem: [{
+        position: 20,
+           label: 'Email',importance: #HIGH }],
+  identification: [{position: 20, label: 'Email'  }]}
+  Email;
+
+  @UI:{lineItem: [{
+       position: 30,
+          label: 'First Name',importance: #HIGH }],
+  identification: [{position: 30, label: 'First Name'  }],
+  selectionField: [{ position: 20 }]}
+  @Consumption.valueHelpDefinition: [{ entity: { element: 'Firstname', name: 'z_c_header_4737' } }]
+  FirstName;
+
+  @UI:{lineItem: [{
+       position: 40,
+          label: 'Last Name',importance: #LOW }],
+  identification: [{position: 40, label: 'Last Name'  }]}
+  LastName;
+
+  @UI:{lineItem: [{
+       position: 50,
+          label: 'Country',importance: #HIGH }],
+  identification: [{position: 50, label: 'Country'  }],
+  selectionField: [{ position: 30 }]}
+  @Search.defaultSearchElement: true
+  @Consumption.valueHelpDefinition: [{ entity: { element: 'Country', name: 'z_c_header_4737' } }]
+  Country;
+
+  @UI:{lineItem: [{
+       position: 60, label: 'Create On',importance: #HIGH }],
+  identification: [{position: 60, label: 'Create On'  }]}
+  Creation;
+
+  @UI:{lineItem: [{
+       position: 70, label: 'Delivery Date',importance: #LOW }],
+  identification: [{position: 70, label: 'Delivery Date'  }]}
+  DeliveryDate;
+
+  @UI:{lineItem: [{
+       position: 80, label: 'Order Status',importance: #HIGH, criticality: 'Orderstatus' }],
+  identification: [{position: 80, label: 'Order Status'  }]}
+  OrderStatus;
+
+  @UI.hidden: true
+  ImageUrl;
+
+  @UI.hidden: true
+  Createdby;
+
+  @UI.hidden: true
+  Lastchangedby;
+
+  //Associations
+
+  @UI.facet: [{ id: 'Items',
+              purpose: #STANDARD,
+              type: #LINEITEM_REFERENCE,
+              label: 'Items',
+              position: 20 ,
+              targetElement: '_Items'
+               }]
+  _Items;
+
+}
