@@ -4,7 +4,7 @@
     headerInfo: {
     typeName: 'Header',
     typeNamePlural: 'Headers',
-    imageUrl: 'Imageurl',
+    imageUrl: 'ImageUrl',
     title: {
         type: #STANDARD,
         label: 'Header',
@@ -67,18 +67,20 @@ annotate entity z_c_header_4737 with
   DeliveryDate;
 
   @UI:{lineItem: [{
-       position: 80, label: 'Order Status',importance: #HIGH, criticality: 'Orderstatus' }],
+       position: 80, label: 'Order Status',importance: #HIGH, criticality: 'OrderStatus' }],
   identification: [{position: 80, label: 'Order Status'  }]}
   OrderStatus;
 
-  @UI.hidden: true
+  @UI:{lineItem: [{
+       position: 90, label: 'Image',importance: #MEDIUM }],
+  identification: [{position: 90, label: 'Image'  }]}
   ImageUrl;
 
   @UI.hidden: true
-  Createdby;
+  createdby;
 
   @UI.hidden: true
-  Lastchangedby;
+  lastchangedby;
 
   //Associations
 
